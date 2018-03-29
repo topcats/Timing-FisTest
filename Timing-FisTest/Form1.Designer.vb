@@ -33,6 +33,15 @@ Partial Class Form1
         Me.txtOutData = New System.Windows.Forms.TextBox()
         Me.cmdSendIt = New System.Windows.Forms.Button()
         Me.txtInData = New System.Windows.Forms.TextBox()
+        Me.cmdLoadInitial = New System.Windows.Forms.Button()
+        Me.txtOutSeq = New System.Windows.Forms.TextBox()
+        Me.cmdLoadRaceInfo = New System.Windows.Forms.Button()
+        Me.cmdLoadStartList = New System.Windows.Forms.Button()
+        Me.cmdRaceEventStarted = New System.Windows.Forms.Button()
+        Me.cmdRaceEventDNS = New System.Windows.Forms.Button()
+        Me.cmdRaceEventDNF = New System.Windows.Forms.Button()
+        Me.cmdRaceEventDSQ = New System.Windows.Forms.Button()
+        Me.cmdRaceEventTime = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -41,7 +50,7 @@ Partial Class Form1
         Me.Label1.Location = New System.Drawing.Point(272, 17)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 21)
+        Me.Label1.Size = New System.Drawing.Size(42, 17)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Codex"
         '
@@ -50,15 +59,16 @@ Partial Class Form1
         Me.txtSetCodex.Location = New System.Drawing.Point(356, 14)
         Me.txtSetCodex.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSetCodex.Name = "txtSetCodex"
-        Me.txtSetCodex.Size = New System.Drawing.Size(148, 28)
+        Me.txtSetCodex.Size = New System.Drawing.Size(148, 24)
         Me.txtSetCodex.TabIndex = 5
+        Me.txtSetCodex.Text = "9882"
         '
         'txtSetPassword
         '
         Me.txtSetPassword.Location = New System.Drawing.Point(356, 53)
         Me.txtSetPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSetPassword.Name = "txtSetPassword"
-        Me.txtSetPassword.Size = New System.Drawing.Size(148, 28)
+        Me.txtSetPassword.Size = New System.Drawing.Size(148, 24)
         Me.txtSetPassword.TabIndex = 7
         Me.txtSetPassword.Text = "2wsx5TGB"
         '
@@ -67,7 +77,7 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(271, 56)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 21)
+        Me.Label2.Size = New System.Drawing.Size(61, 17)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Password"
         '
@@ -76,7 +86,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(13, 56)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 21)
+        Me.Label3.Size = New System.Drawing.Size(32, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Port"
         '
@@ -85,7 +95,7 @@ Partial Class Form1
         Me.txtSetPort.Location = New System.Drawing.Point(98, 53)
         Me.txtSetPort.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSetPort.Name = "txtSetPort"
-        Me.txtSetPort.Size = New System.Drawing.Size(148, 28)
+        Me.txtSetPort.Size = New System.Drawing.Size(148, 24)
         Me.txtSetPort.TabIndex = 3
         Me.txtSetPort.Text = "1550"
         '
@@ -94,7 +104,7 @@ Partial Class Form1
         Me.txtSetServer.Location = New System.Drawing.Point(98, 14)
         Me.txtSetServer.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtSetServer.Name = "txtSetServer"
-        Me.txtSetServer.Size = New System.Drawing.Size(148, 28)
+        Me.txtSetServer.Size = New System.Drawing.Size(148, 24)
         Me.txtSetServer.TabIndex = 1
         Me.txtSetServer.Text = "live.fisski.com"
         '
@@ -104,7 +114,7 @@ Partial Class Form1
         Me.Label4.Location = New System.Drawing.Point(14, 17)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 21)
+        Me.Label4.Size = New System.Drawing.Size(44, 17)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Server"
         '
@@ -119,14 +129,11 @@ Partial Class Form1
         Me.txtOutData.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtOutData.Size = New System.Drawing.Size(545, 324)
         Me.txtOutData.TabIndex = 8
-        Me.txtOutData.Text = "<?xml version=""1.0"" encoding=""UTF-8""?>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<livetiming codex=""1636"" passwd=""mypasswo" &
-    "rd"" sequence=""00000"" timesamp=""20:06:41"">" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<command>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<clear/>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "</command> " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "</l" &
-    "ivetiming>  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.txtOutData.WordWrap = False
         '
         'cmdSendIt
         '
-        Me.cmdSendIt.Location = New System.Drawing.Point(729, 47)
+        Me.cmdSendIt.Location = New System.Drawing.Point(944, 53)
         Me.cmdSendIt.Name = "cmdSendIt"
         Me.cmdSendIt.Size = New System.Drawing.Size(108, 38)
         Me.cmdSendIt.TabIndex = 9
@@ -146,11 +153,102 @@ Partial Class Form1
         Me.txtInData.TabIndex = 10
         Me.txtInData.WordWrap = False
         '
+        'cmdLoadInitial
+        '
+        Me.cmdLoadInitial.Location = New System.Drawing.Point(540, 13)
+        Me.cmdLoadInitial.Name = "cmdLoadInitial"
+        Me.cmdLoadInitial.Size = New System.Drawing.Size(114, 23)
+        Me.cmdLoadInitial.TabIndex = 11
+        Me.cmdLoadInitial.Text = "Load Initial"
+        Me.cmdLoadInitial.UseVisualStyleBackColor = True
+        '
+        'txtOutSeq
+        '
+        Me.txtOutSeq.Location = New System.Drawing.Point(989, 23)
+        Me.txtOutSeq.Name = "txtOutSeq"
+        Me.txtOutSeq.Size = New System.Drawing.Size(63, 24)
+        Me.txtOutSeq.TabIndex = 12
+        Me.txtOutSeq.Text = "00000"
+        Me.txtOutSeq.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'cmdLoadRaceInfo
+        '
+        Me.cmdLoadRaceInfo.Location = New System.Drawing.Point(540, 42)
+        Me.cmdLoadRaceInfo.Name = "cmdLoadRaceInfo"
+        Me.cmdLoadRaceInfo.Size = New System.Drawing.Size(114, 23)
+        Me.cmdLoadRaceInfo.TabIndex = 13
+        Me.cmdLoadRaceInfo.Text = "Load RaceInfo"
+        Me.cmdLoadRaceInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.cmdLoadRaceInfo.UseVisualStyleBackColor = True
+        '
+        'cmdLoadStartList
+        '
+        Me.cmdLoadStartList.Location = New System.Drawing.Point(540, 71)
+        Me.cmdLoadStartList.Name = "cmdLoadStartList"
+        Me.cmdLoadStartList.Size = New System.Drawing.Size(114, 23)
+        Me.cmdLoadStartList.TabIndex = 14
+        Me.cmdLoadStartList.Text = "Load StartList"
+        Me.cmdLoadStartList.UseVisualStyleBackColor = True
+        '
+        'cmdRaceEventStarted
+        '
+        Me.cmdRaceEventStarted.Location = New System.Drawing.Point(660, 13)
+        Me.cmdRaceEventStarted.Name = "cmdRaceEventStarted"
+        Me.cmdRaceEventStarted.Size = New System.Drawing.Size(128, 23)
+        Me.cmdRaceEventStarted.TabIndex = 15
+        Me.cmdRaceEventStarted.Text = "RaceEvent Started"
+        Me.cmdRaceEventStarted.UseVisualStyleBackColor = True
+        '
+        'cmdRaceEventDNS
+        '
+        Me.cmdRaceEventDNS.Location = New System.Drawing.Point(660, 41)
+        Me.cmdRaceEventDNS.Name = "cmdRaceEventDNS"
+        Me.cmdRaceEventDNS.Size = New System.Drawing.Size(128, 23)
+        Me.cmdRaceEventDNS.TabIndex = 16
+        Me.cmdRaceEventDNS.Text = "RaceEvent DNS"
+        Me.cmdRaceEventDNS.UseVisualStyleBackColor = True
+        '
+        'cmdRaceEventDNF
+        '
+        Me.cmdRaceEventDNF.Location = New System.Drawing.Point(660, 70)
+        Me.cmdRaceEventDNF.Name = "cmdRaceEventDNF"
+        Me.cmdRaceEventDNF.Size = New System.Drawing.Size(128, 23)
+        Me.cmdRaceEventDNF.TabIndex = 17
+        Me.cmdRaceEventDNF.Text = "RaceEvent DNF"
+        Me.cmdRaceEventDNF.UseVisualStyleBackColor = True
+        '
+        'cmdRaceEventDSQ
+        '
+        Me.cmdRaceEventDSQ.Location = New System.Drawing.Point(794, 14)
+        Me.cmdRaceEventDSQ.Name = "cmdRaceEventDSQ"
+        Me.cmdRaceEventDSQ.Size = New System.Drawing.Size(128, 23)
+        Me.cmdRaceEventDSQ.TabIndex = 18
+        Me.cmdRaceEventDSQ.Text = "RaceEvent DSQ"
+        Me.cmdRaceEventDSQ.UseVisualStyleBackColor = True
+        '
+        'cmdRaceEventTime
+        '
+        Me.cmdRaceEventTime.Location = New System.Drawing.Point(794, 41)
+        Me.cmdRaceEventTime.Name = "cmdRaceEventTime"
+        Me.cmdRaceEventTime.Size = New System.Drawing.Size(128, 23)
+        Me.cmdRaceEventTime.TabIndex = 19
+        Me.cmdRaceEventTime.Text = "RaceEvent Time"
+        Me.cmdRaceEventTime.UseVisualStyleBackColor = True
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1064, 443)
+        Me.Controls.Add(Me.cmdRaceEventTime)
+        Me.Controls.Add(Me.cmdRaceEventDSQ)
+        Me.Controls.Add(Me.cmdRaceEventDNF)
+        Me.Controls.Add(Me.cmdRaceEventDNS)
+        Me.Controls.Add(Me.cmdRaceEventStarted)
+        Me.Controls.Add(Me.cmdLoadStartList)
+        Me.Controls.Add(Me.cmdLoadRaceInfo)
+        Me.Controls.Add(Me.txtOutSeq)
+        Me.Controls.Add(Me.cmdLoadInitial)
         Me.Controls.Add(Me.txtInData)
         Me.Controls.Add(Me.cmdSendIt)
         Me.Controls.Add(Me.txtOutData)
@@ -182,4 +280,13 @@ Partial Class Form1
     Friend WithEvents txtOutData As TextBox
     Friend WithEvents cmdSendIt As Button
     Friend WithEvents txtInData As TextBox
+    Friend WithEvents cmdLoadInitial As Button
+    Friend WithEvents txtOutSeq As TextBox
+    Friend WithEvents cmdLoadRaceInfo As Button
+    Friend WithEvents cmdLoadStartList As Button
+    Friend WithEvents cmdRaceEventStarted As Button
+    Friend WithEvents cmdRaceEventDNS As Button
+    Friend WithEvents cmdRaceEventDNF As Button
+    Friend WithEvents cmdRaceEventDSQ As Button
+    Friend WithEvents cmdRaceEventTime As Button
 End Class

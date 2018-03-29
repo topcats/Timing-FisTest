@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,207 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="LoadInitial" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;command&gt;
+&lt;clear/&gt;
+&lt;/command&gt;
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadRaceEventDNF" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;raceevent&gt;
+    &lt;dnf bib="1" /&gt;
+&lt;/raceevent&gt; 
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadRaceEventDNS" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;raceevent&gt;
+    &lt;dns bib="2" /&gt;
+    &lt;nextstart bib="26" /&gt; 
+&lt;/raceevent&gt; 
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadRaceEventDSQ" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;raceevent&gt;
+    &lt;dq bib="26" /&gt;
+&lt;/raceevent&gt; 
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadRaceEventStarted" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;raceevent&gt;
+    &lt;start bib="1" /&gt;
+    &lt;nextstart bib="2" /&gt; 
+&lt;/raceevent&gt; 
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadRaceEventTime" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;raceevent&gt;
+    &lt;finish bib="29"&gt;
+        &lt;time&gt;1:03.46&lt;/time&gt;
+        &lt;diff&gt;0.00&lt;/diff&gt;
+        &lt;rank&gt;1&lt;/rank&gt;
+    &lt;/finish&gt;
+&lt;/raceevent&gt; 
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadRaceInfo" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;raceinfo&gt;
+    &lt;event&gt;TC Test Again&lt;/event&gt;
+    &lt;name /&gt;
+    &lt;slope&gt;Tignes, Stade&lt;/slope&gt;
+    &lt;discipline&gt;DH&lt;/discipline&gt;
+    &lt;gender&gt;M&lt;/gender&gt;
+    &lt;category&gt;FIS&lt;/category&gt;
+    &lt;place&gt;Tignes, FRA&lt;/place&gt;
+    &lt;tempunit&gt;C&lt;/tempunit&gt;
+    &lt;longunit&gt;m&lt;/longunit&gt;
+    &lt;speedunit&gt;kmh&lt;/speedunit&gt;
+    &lt;run no="1"&gt;
+        &lt;discipline /&gt;
+        &lt;start&gt;2100&lt;/start&gt;
+        &lt;finish&gt;2000&lt;/finish&gt;
+        &lt;height&gt;100&lt;/height&gt;
+        &lt;length /&gt;
+        &lt;gates&gt;40&lt;/gates&gt;
+        &lt;turninggates&gt;38&lt;/turninggates&gt;
+        &lt;racedef /&gt;
+    &lt;/run&gt;
+    &lt;run no="2"&gt;
+        &lt;discipline /&gt;
+        &lt;start&gt;2100&lt;/start&gt;
+        &lt;finish&gt;2001&lt;/finish&gt;
+        &lt;height&gt;99&lt;/height&gt;
+        &lt;length /&gt;
+        &lt;gates&gt;39&lt;/gates&gt;
+        &lt;turninggates&gt;37&lt;/turninggates&gt;
+        &lt;racedef /&gt;
+    &lt;/run&gt;
+&lt;/raceinfo&gt;
+&lt;command&gt;
+    &lt;scheduled runno="1"&gt;
+        &lt;year&gt;2018&lt;/year&gt;
+        &lt;month&gt;04&lt;/month&gt;
+        &lt;day&gt;01&lt;/day&gt;
+        &lt;cettime&gt;18:30&lt;/cettime&gt;
+        &lt;loctime&gt;10:30&lt;/loctime&gt;
+        &lt;info&gt;&lt;/info&gt;
+    &lt;/scheduled&gt;
+    &lt;scheduled runno="2"&gt;
+        &lt;year&gt;2018&lt;/year&gt;
+        &lt;month&gt;04&lt;/month&gt;
+        &lt;day&gt;01&lt;/day&gt;
+        &lt;cettime&gt;20:30&lt;/cettime&gt;
+        &lt;loctime&gt;12:30&lt;/loctime&gt;
+        &lt;info&gt;&lt;/info&gt;
+    &lt;/scheduled&gt;
+&lt;/command&gt;
+&lt;meteo&gt;
+    &lt;weather&gt;sun&lt;/weather&gt;
+    &lt;temperature&gt;-4.2&lt;/temperature&gt;
+    &lt;wind&gt;lo&lt;/wind&gt;
+    &lt;snowcondition&gt;sp-c&lt;/snowcondition&gt;
+&lt;/meteo&gt;
+
+&lt;message&gt;
+    &lt;text&gt;this a test message. Hello World!&lt;/text&gt;
+&lt;/message&gt; 
+
+&lt;/livetiming&gt;</value>
+  </data>
+  <data name="LoadStartList" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;livetiming codex="###CODEX###" passwd="###PASSWORD###" sequence="###SEQ###" timestamp="###TIME###"&gt;
+&lt;startlist runno="1"&gt;
+    &lt;racer order="1"&gt;
+        &lt;bib&gt;1&lt;/bib&gt;
+        &lt;lastname&gt;RAICH&lt;/lastname&gt;
+        &lt;firstname&gt;Benjamin&lt;/firstname&gt;
+        &lt;nat&gt;AUT&lt;/nat&gt;
+        &lt;fiscode&gt;50625&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="2"&gt;
+        &lt;bib&gt;2&lt;/bib&gt;
+        &lt;lastname&gt;BLARDONE&lt;/lastname&gt;
+        &lt;firstname&gt;Massimiliano&lt;/firstname&gt;
+        &lt;nat&gt;ITA&lt;/nat&gt;
+        &lt;fiscode&gt;292000&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="3"&gt;
+        &lt;bib&gt;26&lt;/bib&gt;
+        &lt;lastname&gt;ROBERTO&lt;/lastname&gt;
+        &lt;firstname&gt;Alessandro&lt;/firstname&gt;
+        &lt;nat&gt;ITA&lt;/nat&gt;
+        &lt;fiscode&gt;291768&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="4"&gt;
+        &lt;bib&gt;29&lt;/bib&gt;
+        &lt;lastname&gt;BYGGMARK&lt;/lastname&gt;
+        &lt;firstname&gt;Jens&lt;/firstname&gt;
+        &lt;nat&gt;SWE&lt;/nat&gt;
+        &lt;fiscode&gt;501101&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="5"&gt;
+        &lt;bib&gt;31&lt;/bib&gt;
+        &lt;lastname&gt;HIRSCHER&lt;/lastname&gt;
+        &lt;firstname&gt;Marcel&lt;/firstname&gt;
+        &lt;nat&gt;AUT&lt;/nat&gt;
+        &lt;fiscode&gt;53831&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="6"&gt;
+        &lt;bib&gt;32&lt;/bib&gt;
+        &lt;lastname&gt;ADAMSON&lt;/lastname&gt;
+        &lt;firstname&gt;Alexander&lt;/firstname&gt;
+        &lt;nat&gt;GBR&lt;/nat&gt;
+        &lt;fiscode&gt;221227&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="7"&gt;
+        &lt;bib&gt;33&lt;/bib&gt;
+        &lt;lastname&gt;FORD&lt;/lastname&gt;
+        &lt;firstname&gt;John&lt;/firstname&gt;
+        &lt;nat&gt;GBR&lt;/nat&gt;
+        &lt;fiscode&gt;221314&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="8"&gt;
+        &lt;bib&gt;34&lt;/bib&gt;
+        &lt;lastname&gt;WEIGAND&lt;/lastname&gt;
+        &lt;firstname&gt;Tommy&lt;/firstname&gt;
+        &lt;nat&gt;GER&lt;/nat&gt;
+        &lt;fiscode&gt;221314&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="9"&gt;
+        &lt;bib&gt;35&lt;/bib&gt;
+        &lt;lastname&gt;KROELL&lt;/lastname&gt;
+        &lt;firstname&gt;Klaus&lt;/firstname&gt;
+        &lt;nat&gt;AUT&lt;/nat&gt;
+        &lt;fiscode&gt;202887&lt;/fiscode&gt;
+    &lt;/racer&gt;
+    &lt;racer order="10"&gt;
+        &lt;bib&gt;36&lt;/bib&gt;
+        &lt;lastname&gt;MARTY&lt;/lastname&gt;
+        &lt;firstname&gt;Philippe&lt;/firstname&gt;
+        &lt;nat&gt;FRA&lt;/nat&gt;
+        &lt;fiscode&gt;192807&lt;/fiscode&gt;
+    &lt;/racer&gt;
+&lt;/startlist&gt;
+&lt;command&gt;&lt;activerun no="1" /&gt;&lt;/command&gt; 
+&lt;/livetiming&gt;</value>
+  </data>
 </root>

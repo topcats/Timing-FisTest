@@ -17,6 +17,14 @@ Public Class Form1
 
 
 
+
+                'Set Output Message
+                Me.txtOutData.Text = Me.txtOutData.Text.Replace("###CODEX###", Me.txtSetCodex.Text)
+                Me.txtOutData.Text = Me.txtOutData.Text.Replace("###PASSWORD###", Me.txtSetPassword.Text)
+                Me.txtOutSeq.Text = String.Format("{0:00000}", CInt(Me.txtOutSeq.Text) + 1)
+                Me.txtOutData.Text = Me.txtOutData.Text.Replace("###SEQ###", Me.txtOutSeq.Text)
+                Me.txtOutData.Text = Me.txtOutData.Text.Replace("###TIME###", Now.ToString("HH:mm:ss"))
+
                 Dim data As [Byte]() = System.Text.Encoding.UTF8.GetBytes(Me.txtOutData.Text)
 
                 ' Get a client stream for reading and writing.
@@ -69,5 +77,42 @@ Public Class Form1
         Me.txtInData.Text = ""
     End Sub
 
+    Private Sub cmdLoadInitial_Click(sender As Object, e As EventArgs) Handles cmdLoadInitial.Click
+        Me.txtOutData.Text = My.Resources.LoadInitial
+        
+    End Sub
+
+    Private Sub cmdLoadStartList_Click(sender As Object, e As EventArgs) Handles cmdLoadStartList.Click
+        Me.txtOutData.Text = My.Resources.LoadStartList
+    End Sub
+
+    Private Sub cmdLoadRaceInfo_Click(sender As Object, e As EventArgs) Handles cmdLoadRaceInfo.Click
+        Me.txtOutData.Text = My.Resources.LoadRaceInfo
+
+    End Sub
+
+    Private Sub cmdRaceEventStarted_Click(sender As Object, e As EventArgs) Handles cmdRaceEventStarted.Click
+        Me.txtOutData.Text = My.Resources.LoadRaceEventStarted
+    End Sub
+
+    Private Sub cmdRaceEventDNS_Click(sender As Object, e As EventArgs) Handles cmdRaceEventDNS.Click
+        Me.txtOutData.Text = My.Resources.LoadRaceEventDNS
+
+    End Sub
+
+    Private Sub cmdRaceEventDNF_Click(sender As Object, e As EventArgs) Handles cmdRaceEventDNF.Click
+        Me.txtOutData.Text = My.Resources.LoadRaceEventDNF
+
+    End Sub
+
+    Private Sub cmdRaceEventDSQ_Click(sender As Object, e As EventArgs) Handles cmdRaceEventDSQ.Click
+        Me.txtOutData.Text = My.Resources.LoadRaceEventDSQ
+
+    End Sub
+
+    Private Sub cmdRaceEventTime_Click(sender As Object, e As EventArgs) Handles cmdRaceEventTime.Click
+        Me.txtOutData.Text = My.Resources.LoadRaceEventTime
+
+    End Sub
 End Class
 
