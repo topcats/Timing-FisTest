@@ -42,6 +42,7 @@ Partial Class Form1
         Me.cmdRaceEventDNF = New System.Windows.Forms.Button()
         Me.cmdRaceEventDSQ = New System.Windows.Forms.Button()
         Me.cmdRaceEventTime = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -61,7 +62,7 @@ Partial Class Form1
         Me.txtSetCodex.Name = "txtSetCodex"
         Me.txtSetCodex.Size = New System.Drawing.Size(148, 24)
         Me.txtSetCodex.TabIndex = 5
-        Me.txtSetCodex.Text = "9882"
+        Me.txtSetCodex.Text = "9766"
         '
         'txtSetPassword
         '
@@ -122,6 +123,8 @@ Partial Class Form1
         '
         Me.txtOutData.AcceptsReturn = True
         Me.txtOutData.AcceptsTab = True
+        Me.txtOutData.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtOutData.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOutData.Location = New System.Drawing.Point(12, 107)
         Me.txtOutData.Multiline = True
@@ -144,6 +147,9 @@ Partial Class Form1
         '
         Me.txtInData.AcceptsReturn = True
         Me.txtInData.AcceptsTab = True
+        Me.txtInData.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtInData.Font = New System.Drawing.Font("Courier New", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtInData.Location = New System.Drawing.Point(563, 107)
         Me.txtInData.Multiline = True
@@ -235,11 +241,21 @@ Partial Class Form1
         Me.cmdRaceEventTime.Text = "RaceEvent Time"
         Me.cmdRaceEventTime.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(847, 71)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1064, 443)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.cmdRaceEventTime)
         Me.Controls.Add(Me.cmdRaceEventDSQ)
         Me.Controls.Add(Me.cmdRaceEventDNF)
@@ -289,4 +305,5 @@ Partial Class Form1
     Friend WithEvents cmdRaceEventDNF As Button
     Friend WithEvents cmdRaceEventDSQ As Button
     Friend WithEvents cmdRaceEventTime As Button
+    Friend WithEvents Button1 As Button
 End Class

@@ -79,6 +79,14 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Helpers\UTFStringWriter.vb" />
+    <Compile Include="Models\CommandScheduledItem.vb" />
+    <Compile Include="Models\CommandItem.vb" />
+    <Compile Include="Models\LiveTiming.vb" />
+    <Compile Include="Models\MeteoInfo.vb" />
+    <Compile Include="Models\RaceInfo.vb" />
+    <Compile Include="Models\RaceMessage.vb" />
+    <Compile Include="Models\RaceRunInfo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

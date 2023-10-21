@@ -1,5 +1,9 @@
-﻿Imports System.Net
+﻿Imports System.IO
+Imports System.Net
 Imports System.Net.Sockets
+Imports System.Text
+Imports System.Xml.Serialization
+Imports Timing_FisTest.Helpers
 
 Public Class Form1
     Private Sub cmdSendIt_Click(sender As Object, e As EventArgs) Handles cmdSendIt.Click
@@ -13,9 +17,10 @@ Public Class Form1
 
             Try
 
-                Dim oClient As New TcpClient(Me.txtSetServer.Text, CInt(Me.txtSetPort.Text))
-
-
+                Dim oClient As New TcpClient(Me.txtSetServer.Text, CInt(Me.txtSetPort.Text)) With {
+                    .SendTimeout = 5000,
+                    .ReceiveTimeout = 10000
+                }
 
 
                 'Set Output Message
@@ -79,7 +84,7 @@ Public Class Form1
 
     Private Sub cmdLoadInitial_Click(sender As Object, e As EventArgs) Handles cmdLoadInitial.Click
         Me.txtOutData.Text = My.Resources.LoadInitial
-        
+
     End Sub
 
     Private Sub cmdLoadStartList_Click(sender As Object, e As EventArgs) Handles cmdLoadStartList.Click
@@ -114,5 +119,84 @@ Public Class Form1
         Me.txtOutData.Text = My.Resources.LoadRaceEventTime
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
+
+        Dim bob = New Models.LiveTiming() With {
+            .Codex = "9766",
+            .Password = "2wsx5TGB",
+            .SequenceNo = 2
+        }
+
+        bob.RaceInfoItem = New Models.RaceInfo() With {
+            .EventTitle = "TC Test Again XML",
+            .DisciplineCode = "DH",
+            .GenderCode = "M",
+            .CategoryCode = "FIS",
+            .Slope = "Tignes, Stade",
+            .Place = "Tignes, FRA"
+        }
+
+        bob.RaceInfoItem.RunInfos = New List(Of Models.RaceRunInfo) From {
+            New Models.RaceRunInfo() With {
+                                      .RunNumber = 1,
+                                      .StartHeight = 2100,
+                                      .FinishHeight = 2001,
+                                      .Gates = 40,
+                                      .TurningGates = 38},
+            New Models.RaceRunInfo() With {
+                                      .RunNumber = 2,
+                                      .StartHeight = 2100,
+                                      .FinishHeight = 2001,
+                                      .Gates = 39,
+                                      .TurningGates = 37}
+        }
+
+        bob.CommandInfoItem = New Models.CommandItem()
+        bob.CommandInfoItem.ScheduledItems = New List(Of Models.CommandScheduledItem) From {
+            New Models.CommandScheduledItem() With {
+                                      .RunNumber = 1,
+                                      .RaceDate = New Date(2018, 4, 1),
+                                      .CetTime = "18:30",
+                                      .LocTime = "10:00",
+                                      .RaceInfo = String.Empty},
+            New Models.CommandScheduledItem() With {
+                                      .RunNumber = 2,
+                                      .RaceDate = New Date(2018, 4, 1),
+                                      .CetTime = "20:30",
+                                      .LocTime = "12:00",
+                                      .RaceInfo = String.Empty}
+        }
+
+        bob.MeteoInfoItem = New Models.MeteoInfo() With {
+            .WeatherCode = "sun",
+            .Temperature = "-4.2",
+            .WindCode = "lo",
+            .SnowConditionCode = "sp-c"
+        }
+
+        bob.RaceMessageItem = New Models.RaceMessage() With {
+            .Text = "Test message from XML Serialier"
+        }
+
+
+
+
+        'OUtput Sting
+
+
+        Dim serializer As New XmlSerializer(GetType(Models.LiveTiming))
+        Using writer As New UTFStringWriter()
+
+            serializer.Serialize(writer, bob)
+
+            Me.txtOutData.Text = writer.ToString()
+
+        End Using
+
+    End Sub
+
 End Class
 

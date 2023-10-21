@@ -285,10 +285,10 @@
     &lt;/racer&gt;
     &lt;racer order="7"&gt;
         &lt;bib&gt;33&lt;/bib&gt;
-        &lt;lastname&gt;FORD&lt;/lastname&gt;
-        &lt;firstname&gt;John&lt;/firstname&gt;
+        &lt;lastname&gt;COLE&lt;/lastname&gt;
+        &lt;firstname&gt;Tristan&lt;/firstname&gt;
         &lt;nat&gt;GBR&lt;/nat&gt;
-        &lt;fiscode&gt;221314&lt;/fiscode&gt;
+        &lt;fiscode&gt;220421&lt;/fiscode&gt;
     &lt;/racer&gt;
     &lt;racer order="8"&gt;
         &lt;bib&gt;34&lt;/bib&gt;
