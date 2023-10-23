@@ -72,6 +72,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\WeatherCodes.vb" />
+    <Compile Include="Enums\WeatherSnow.vb" />
+    <Compile Include="Enums\WeatherWind.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +83,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helpers\UTFStringWriter.vb" />
+    <Compile Include="Models\CommandActiveRun.vb" />
     <Compile Include="Models\CommandScheduledItem.vb" />
     <Compile Include="Models\CommandItem.vb" />
     <Compile Include="Models\LiveTiming.vb" />
